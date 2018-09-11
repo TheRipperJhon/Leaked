@@ -22,7 +22,7 @@ In <strong>Install Python 3 </strong>, enable <strong>Add Python 3.7 to PATH</st
 
 Download and run Git setup file from <a href="https://Git-scm.com" target="_blank"><span style="color: blue">Git-scm.com</span></a>, choose <strong>Use Git from Windows Command Propmt</strong>.
 
-Afther that, Run Command Propmt or PowerShell and enter this commands:
+After that, Run Command Propmt or PowerShell and enter this commands:
 
     git clone https://github.com/GitHackTools/Leaked
     cd Leaked

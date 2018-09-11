@@ -91,7 +91,7 @@ SHA512: """+js['sha512']+"""""")
         print('\033[91mYour Internet Offline!!!')
         exit
     except json.decoder.JSONDecodeError:
-        print('\033[93mCongratulations! It does not leaked!!!')
+        print('\033[93mCongratulations! It was not leaked!!!')
         print()
         hashs()
 

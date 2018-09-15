@@ -48,20 +48,17 @@ Let follow their Twitter account!
 # Screenshots
 ![Run Leaked? in ParrotSec](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-2.0-ParrotSec.png)
 ![Run Leaked? in PowerShell](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-2.0-Windows-10.png)
-![Run Leaked? in Kali Linux](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-KaliLinux.png)
+![Run Leaked? in Kali Linux](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-2.0-KaliLinux.png)
 
 # Thanks to Thanks to <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools</span></a> (myself) for programming this tool
 
 And <a href="https://twitter.com/thehappydinoa" target="_blank"><span style="color: blue">Aidan Holland</span></a> for his free Python module!
 
 # Contact to Author
-Website: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools.blogspot.com</span></a>
-
-Twitter: <a href="https://twitter.com/SecureGF" target="_blank"><span style="color: blue">@SecureGF</span></a>
-
-Facebook: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">@GitHackTools</span></a>
-
-Google Plus: <a href="https://plus.google.com/+TVT618" target="_blank"><span style="color: blue">+TVT618</span></a>
+ * Website: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools.blogspot.com</span></a>
+ * Twitter: <a href="https://twitter.com/SecureGF" target="_blank"><span style="color: blue">@SecureGF</span></a>
+ * Facebook: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">@GitHackTools</span></a>
+ * Google Plus: <a href="https://plus.google.com/+TVT618" target="_blank"><span style="color: blue">+TVT618</span></a>
 
 # To-do list
  * Has yet devise!

@@ -1,10 +1,15 @@
+#!/usr/bin/env python3
 import os
-import json
-import requests
-from platform import system
+import colorama
+import leakz
+
+try:
+    input = raw_input
+except NameError:
+    pass
 
 def clear():
-    if system() == 'Windows':
+    if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
@@ -14,87 +19,104 @@ def back():
     back = input('\033[92mDo you want to contunue? [Yes/No]: ')
     if back[0].upper() == 'Y':
         print()
-        hashs()
+        menu()
     elif back[0].upper() == 'N':
-        print('\033[93mRemember https://GitHackTools.blogspot.com')
-        exit
+        print('\033[93m[+] Remember to checkout: https://GitHackTools.blogspot.com')
+        exit(0)
     else:
         print('\033[92m?')
-        exit
+        exit(0)
 
 def banner():
-    print("""\033[93m
- ___       _______   ________  ___  __    _______   ________  ________      
+    print("""\033[93m ___       _______   ________  ___  __    _______   ________  ________      
 |\  \     |\  ___ \ |\   __  \|\  \|\  \ |\  ___ \ |\   ___ \|\_____  \     
 \ \  \    \ \   __/|\ \  \|\  \ \  \/  /|\ \   __/|\ \  \_|\ \|____|\  \    
  \ \  \    \ \  \_|/_\ \   __  \ \   ___  \ \  \_|/_\ \  \ \\ \    \ \__\   
   \ \  \____\ \  \_|\ \ \  \ \  \ \  \\ \  \ \  \_|\ \ \  \_\\ \    \|__|   
    \ \_______\ \_______\ \__\ \__\ \__\\ \__\ \_______\ \_______\       ___ 
     \|_______|\|_______|\|__|\|__|\|__| \|__|\|_______|\|_______|      |\__\\
-                                                                        \|__| 1.1
-     A Checking tool for Hash codes and Passwords leaked""")
-    print()
+                                                                        \|__| 2.0
+     A Checking tool for Hash codes, Passwords and Emails leaked
+     """)
 
-def hashs():
+def menu():
     try:
         print("""\033[96mWhat do you want to check?
-    1, Password Leaked      3, About Author     
-    2, Hash Leaked          4, No Check Anything! (Exit)""")
-        print()
+    1. Password Hashes      4. Update Leaked?
+    2. Hash Leaked          5. About Author
+    3, Email Leaked         6, Exit (or just need Crtl+C)
+    """)
 
-        choice = input('Enter your choice (1-4): ')
+        choice = input('Enter your choice (1-6): ')
         if choice == '1':
-            print()
-            nocode = input('Enter or paste a password you want to check: ')
-            cipher = requests.get('https://lea.kz/api/password/'+nocode)
-            js = json.loads(cipher.text)
-            print("""\033[93mIT LEAKED!!! The Hash codes of the Password is:
-
-MD5: """+js['md5']+"""
-SHA1: """+js['sha1']+"""
-SHA224: """+js['sha224']+"""
-SHA256: """+js['sha256']+"""
-SHA384: """+js['sha384']+"""
-SHA512: """+js['sha512']+"""""")
+            password = input('\nEnter or paste a password you want to check: ')
+            hashs = leakz.hashes_from_password(password)
+            print("""\n\033[93mIT LEAKED!!! The Hash codes of the Password is:
+[-] MD5: """ + hashs['md5'] + """
+[-] SHA1: """ + hashs['sha1'] + """
+[-] SHA224: """ + hashs['sha224'] + """
+[-] SHA256: """ + hashs['sha256'] + """
+[-] SHA384: """ + hashs['sha384'] + """
+[-] SHA512: """ + hashs['sha512'] + """""")
             back()
 
         elif choice == '2':
-            print()
-            code = input('Enter or paste a hash code you want to check: ')
-            decipher = requests.get('https://lea.kz/api/hash/'+code)
-            js = json.loads(decipher.text)
-            print('\033[93mTHAT HASH CODE IS LEAKED! It means: '+js['password'])
+            hashcode = input('\nEnter or paste a hash code you want to check: ')
+            passwd = leakz.password_from_hash(hashcode)
+            print(
+                '\n\033[93m[-] THAT HASH CODE HAS BEEN LEAKED! It means:',passwd)
             back()
 
         elif choice == '3':
-            print("""\033[93mLeaked? 1.1 - A Checking tool for Hash codes and Passwords leaked
-
-    AUTHOR: https://GitHackTools.blogspot.com
-            https://twitter.com/SecureGF
-            https://fb.com/TVT618
-            https://plus.google.com/+TVT618""")
+            email = input('\nEnter or paste a email you want to check: ')
+            info = leakz.leaked_mail(email)
+            print("""\n\033[93m[-] THAT EMAIL HAS BEEN LEAKED!
+    It was used for:""",info)
             back()
 
         elif choice == '4':
-            print('\033[93mRemember https://GitHackTools.blogspot.com')
-            exit
+            os.system('sudo git pull -f')
+            print('\n\033[93m[-] Leaked updated!')
+            back()
+
+        elif choice == '5':
+            print("""\033[93mLeaked? 2.0 - A Checking tool for Hash codes and Passwords leaked
+
+    AUTHOR: https://GitHackTools.blogspot.com
+            https://twitter.com/SecureGF
+            https://fb.com/githacktools
+            https://plus.google.com/+TVT618""")
+            back()
+
+        elif choice == '6':
+            print("\033[93m[+] Don't forget https://GitHackTools.blogspot.com")
+            exit(0)
 
         else:
-            print('?')
-            print()
-            hashs()
+            print('?\n')
+            menu()
 
     except KeyboardInterrupt:
+        back()
+        exit(0)
+    except leakz.exceptions.LeakzRequestException:
+        print('\033[91m[!] Your Internet Offline!!!')
+        exit(1)
+    except leakz.exceptions.LeakzNotLeaked:
+        print('\033[93m[+] Congratulations! It was not leaked!!!')
         print()
-        exit
-    except requests.exceptions.ConnectionError:
-        print('\033[91mYour Internet Offline!!!')
-        exit
-    except json.decoder.JSONDecodeError:
-        print('\033[93mCongratulations! It was not leaked!!!')
+        menu()
+    except leakz.exceptions.LeakzJSONDecodeException:
+        print('\033[93m[+] Congratulations! It was not leaked!!!')
         print()
-        hashs()
+        menu()
+    except AttributeError:
+        print('\033[93m[+] Congratulations! It was not leaked!!!')
+        print()
+        menu()
 
-clear()
-banner()
-hashs()
+if __name__ == "__main__":
+    colorama.init()
+    clear()
+    banner()
+    menu()

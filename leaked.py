@@ -98,7 +98,6 @@ def menu():
 
     except KeyboardInterrupt:
         back()
-        exit(0)
     except leakz.exceptions.LeakzRequestException:
         print('\033[91m[!] Your Internet Offline!!!')
         exit(1)

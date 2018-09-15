@@ -75,7 +75,7 @@ def menu():
             back()
 
         elif choice == '4':
-            os.system('git pull -f')
+            os.system('git pull --commit -f')
             print('\n\033[93m[+] Leaked updated!')
             back()
 

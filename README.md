@@ -1,11 +1,19 @@
-# About Leaked? 1.1
-Leaked? is A Checking tool for Hash codes and Passwords leaked, use API from <a href="https://twitter.com/webtobesocial" target="_blank"><span style="color: blue">@webtobesocial</span></a>.
+# About Leaked? 2.0
+Leaked? is A Checking tool for Hash codes and Passwords leaked, uses leakz module from <a href="https://twitter.com/thehappydinoa" target="_blank"><span style="color: blue">Aidan Holland</span></a>, and leakz module uses API from <a href="https://twitter.com/webtobesocial" target="_blank"><span style="color: blue">Aurelius Wendelken</span></a>.
 
-Leaked? can work in any OS if they have support Python 3
-  
+Leaked? can work in any OS if they have support Python 3 and 2.
+
+# What's new?
+ * Check email leaked
+ * Update
+ * More friendly for users
+ * Support Python 2 and 3
+
 # Features
  * Check passwords leaked
  * Check hash code leaked
+ * Check email leaked NEW!
+ * Update NEW!
  * Exit
  * About Author
  
@@ -13,9 +21,11 @@ Leaked? can work in any OS if they have support Python 3
     sudo apt update && apt install python3 python3-pip
     git clone https://github.com/GitHackTools/Leaked
     cd Leaked
-    pip3 install requests
+    pip3 install -r requirements.txt
+    pip install -r requirements.txt
     python3 leaked.py
-   
+or  <code>python leaked.py</code>
+
 # Install and Run in Windows
 Download and run Python 3 setup file from <a href="https://python.org" target="_blank"><span style="color: blue">Python.org</span></a>.
 In <strong>Install Python 3 </strong>, enable <strong>Add Python 3.7 to PATH</strong> and <strong>For all users</strong>
@@ -26,22 +36,23 @@ After that, Run Command Propmt or PowerShell and enter this commands:
 
     git clone https://github.com/GitHackTools/Leaked
     cd Leaked
-    pip install requests
+    pip install -r requirements.txt
     python leaked.py
 
 # Update Leaked?: <code>git pull -f</code>
 
 # Notes
-Leaked? uses API from <a href="https://lea.kz/api" target="_blank"><span style="color: blue">lea.kz</span></a> of <a href="https://twitter.com/webtobesocial" target="_blank"><span style="color: blue">@webtobesocial</span></a>
-Let follow his Twitter account!
+Leaked? uses leakz module from <a href="https://twitter.com/thehappydinoa" target="_blank"><span style="color: blue">Aidan Holland</span></a>, and leakz module uses API from <a href="https://twitter.com/webtobesocial" target="_blank"><span style="color: blue">Aurelius Wendelken</span></a>
+Let follow their Twitter account!
   
 # Screenshots
-![Run Leaked? in ParrotSec](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-ParrotSec.png)
-![Run Leaked? in PowerShell](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-PowerShell.png)
+![Run Leaked? in ParrotSec](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-2.0-ParrotSec.png)
+![Run Leaked? in PowerShell](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-2.0-Windows-10.png)
 ![Run Leaked? in Kali Linux](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-KaliLinux.png)
 
 # Thanks to Thanks to <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools</span></a> (myself) for programming this tool
-And <a href="https://twitter.com/webtobesocial" target="_blank"><span style="color: blue">@webtobesocial</span></a> for his free API!
+
+And <a href="https://twitter.com/thehappydinoa" target="_blank"><span style="color: blue">Aidan Holland</span></a> for his free Python module!
 
 # Contact to Author
 Website: <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools.blogspot.com</span></a>

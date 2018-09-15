@@ -43,6 +43,7 @@ After that, Run Command Propmt or PowerShell and enter this commands:
 
 # Notes
 Leaked? uses leakz module from <a href="https://twitter.com/thehappydinoa" target="_blank"><span style="color: blue">Aidan Holland</span></a>, and leakz module uses API from <a href="https://twitter.com/webtobesocial" target="_blank"><span style="color: blue">Aurelius Wendelken</span></a>
+
 Let follow their Twitter account!
   
 # Screenshots

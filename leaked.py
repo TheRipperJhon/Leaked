@@ -2,6 +2,7 @@
 import os
 import colorama
 import leakz
+import requests
 
 try:
     input = raw_input
@@ -13,6 +14,17 @@ def clear():
         os.system('cls')
     else:
         os.system('clear')
+
+def grab_password(email):
+    UserAgent = {'User-Agent': 'test-agent'}
+    url  = "https://ghostproject.fr/search.php"
+    data = {"param":email}
+    req = requests.post(url,headers=UserAgent,data=data)
+    result = req.text.split("\\n")
+    if "Error" in req.text or len(result)==2:
+        return False
+    else:
+        return result[1:-1]        
 
 def back():
     print()
@@ -27,7 +39,7 @@ def back():
         print('\033[92m?')
         exit(0)
 
-def banner():
+def leaked():
     print("""\033[93m ___       _______   ________  ___  __    _______   ________  ________      
 |\  \     |\  ___ \ |\   __  \|\  \|\  \ |\  ___ \ |\   ___ \|\_____  \     
 \ \  \    \ \   __/|\ \  \|\  \ \  \/  /|\ \   __/|\ \  \_|\ \|____|\  \    
@@ -35,7 +47,7 @@ def banner():
   \ \  \____\ \  \_|\ \ \  \ \  \ \  \\ \  \ \  \_|\ \ \  \_\\ \    \|__|   
    \ \_______\ \_______\ \__\ \__\ \__\\ \__\ \_______\ \_______\       ___ 
     \|_______|\|_______|\|__|\|__|\|__| \|__|\|_______|\|_______|      |\__\\
-                                                                        \|__| 2.0
+                                                                        \|__| 2.1
      A Checking tool for Hash codes, Passwords and Emails leaked
      """)
 
@@ -44,10 +56,11 @@ def menu():
         print("""\033[96mWhat do you want to check?
     1. Password Hashes      4. Update Leaked?
     2. Hash Leaked          5. About Author
-    3, Email Leaked         6, Exit (or just need Crtl+C)
+    3, Email Leaked         6. Grabb email passwords
+                            7, Exit (or just need Crtl+C)
     """)
 
-        choice = input('Enter your choice (1-6): ')
+        choice = input('Enter your choice (1-7): ')
         if choice == '1':
             password = input('\nEnter or paste a password you want to check: ')
             hashs = leakz.hashes_from_password(password)
@@ -70,18 +83,17 @@ def menu():
         elif choice == '3':
             email = input('\nEnter or paste a email you want to check: ')
             info = leakz.leaked_mail(email)
-            print("""\n\033[93m[-] THAT EMAIL HAS BEEN LEAKED!
+            print("""\n\033[93m[-] THIS EMAIL HAS BEEN LEAKED!
     It was used for:""",info)
             back()
 
         elif choice == '4':
-            os.system('git pull')
+            os.system('sudo git pull -f')
             print('\n\033[93m[+] Leaked updated!')
             back()
 
         elif choice == '5':
-            print("""\033[93mLeaked? 2.0 - A Checking tool for Hash codes and Passwords leaked
-
+            print("""\033[93mLeaked? 2.1 - A Checking tool for Hash codes and Passwords leaked
     AUTHOR: https://GitHackTools.blogspot.com
             https://twitter.com/SecureGF
             https://fb.com/githacktools
@@ -89,9 +101,19 @@ def menu():
             back()
 
         elif choice == '6':
+            email = input('\nEnter or paste a email you want to check: ')
+            emails = grab_password(email)
+            if not emails:
+                print("\033[93m[+] Passwords not found! It was not leaked!!!")
+                back()
+            else:
+                for email in emails:
+                    print(email)
+            back()
+
+        elif choice == '7':
             print("\033[93m[+] Don't forget https://GitHackTools.blogspot.com")
             exit(0)
-
         else:
             print('?\n')
             menu()
@@ -117,5 +139,5 @@ def menu():
 if __name__ == "__main__":
     colorama.init()
     clear()
-    banner()
-    menu()
+    leaked()
+menu()

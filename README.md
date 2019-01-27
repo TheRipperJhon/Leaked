@@ -14,7 +14,6 @@ Leaked? can work in any OS if they have Python 2 or 3 installed.
  * Check passwords leaked
  * Check hash code leaked
  * Check email leaked NEW!
- * Update!
  * Exit
  * About Author
  
@@ -22,10 +21,8 @@ Leaked? can work in any OS if they have Python 2 or 3 installed.
     sudo apt update && sudo apt install python3 python3-pip
     git clone https://github.com/GitHackTools/Leaked
     cd Leaked
-    sudo -H pip3 install -r requirements.txt
-    sudo -H pip install -r requirements.txt
+    bash install_update.sh
     python3 leaked.py
-or  <code>python leaked.py</code>
 
 # Install and Run in Windows
 Download and run Python 3 setup file from <a href="https://python.org" target="_blank"><span style="color: blue">Python.org</span></a>.
@@ -37,10 +34,11 @@ After that, Run Command Propmt or PowerShell and enter this commands:
 
     git clone https://github.com/GitHackTools/Leaked
     cd Leaked
-    pip install -r requirements.txt
+    ./install_update.bat
     python leaked.py
 
-# Update Leaked?: <code>git pull -f</code>
+# Update Leaked?
+<code>git pull -f</code> or run <code>install_update.bat</code> (for Windows) and <code>install_update.sh</code> (for Linux)
 
 # Notes
 Leaked? uses leakz module from <a href="https://twitter.com/thehappydinoa" target="_blank"><span style="color: blue">Aidan Holland</span></a>, and leakz module uses API from <a href="https://twitter.com/webtobesocial" target="_blank"><span style="color: blue">Aurelius Wendelken</span></a>

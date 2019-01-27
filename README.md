@@ -48,8 +48,7 @@ Please follow their Twitter account!
   
 # Screenshots
 ![Run Leaked? in ParrotSec](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-2.0-ParrotSec.png)
-![Run Leaked? in PowerShell](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-2.0-Windows-10.png)
-![Run Leaked? in Kali Linux](https://linuxteamvietnam.us/wp-content/uploads/2018/09/Leaked-2.0-KaliLinux.png)
+![Run Leaked? in PowerShell](https://1.bp.blogspot.com/-70-lnGlxhmY/XE00PDPyPoI/AAAAAAAAN-w/col6QS1xZCkB3GYNRwetlihkxBZ_NKk0wCLcBGAs/s1600/Leaked%2B2.1%2BWindows.PNG)
 
 # Thanks to <a href="https://githacktools.blogspot.com" target="_blank"><span style="color: blue">GitHackTools</span></a> (myself) for programming this tool
 

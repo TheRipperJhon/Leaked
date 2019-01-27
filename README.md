@@ -8,12 +8,13 @@ Leaked? can work in any OS if they have Python 2 or 3 installed.
  * Update
  * More friendly for users
  * Support Python 2 and 3
+ * Update with Batch (Windows) and Bash (Linux) file
 
 # Features
- * Grabb email passwords!!
+ * Grabb email passwords NEW!
  * Check passwords leaked
  * Check hash code leaked
- * Check email leaked NEW!
+ * Check email leaked!
  * Exit
  * About Author
  

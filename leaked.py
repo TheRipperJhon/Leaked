@@ -54,10 +54,9 @@ def leaked():
 def menu():
     try:
         print("""\033[96mWhat do you want to check?
-    1. Password Hashes      4. Update Leaked?
+    1. Password Hashes      4. Grabb email passwords
     2. Hash Leaked          5. About Author
-    3, Email Leaked         6. Grabb email passwords
-                            7, Exit (or just need Crtl+C)
+    3, Email Leaked         6. Exit (or just need Crtl+C)
     """)
 
         choice = input('Enter your choice (1-7): ')
@@ -87,11 +86,6 @@ def menu():
     It was used for:""",info)
             back()
 
-        elif choice == '4':
-            os.system('sudo git pull -f')
-            print('\n\033[93m[+] Leaked updated!')
-            back()
-
         elif choice == '5':
             print("""\033[93mLeaked? 2.1 - A Checking tool for Hash codes and Passwords leaked
     AUTHOR: https://GitHackTools.blogspot.com
@@ -100,7 +94,7 @@ def menu():
             https://plus.google.com/+TVT618""")
             back()
 
-        elif choice == '6':
+        elif choice == '4':
             email = input('\nEnter or paste a email you want to check: ')
             emails = grab_password(email)
             if not emails:
@@ -111,7 +105,7 @@ def menu():
                     print(email)
             back()
 
-        elif choice == '7':
+        elif choice == '6':
             print("\033[93m[+] Don't forget https://GitHackTools.blogspot.com")
             exit(0)
         else:
